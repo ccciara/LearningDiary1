@@ -1,0 +1,322 @@
+[
+  {
+    "objectID": "week9.html",
+    "href": "week9.html",
+    "title": "9  Week 9: Temperature",
+    "section": "",
+    "text": "9.1 Summary\nThis week we focused on the urban heat island effect, reading studies about environmental disparities in urban areas and between different economic classes and how it has resulted in impacts to health. The historical practise of redlining, racial discrimination in housing resulting in ethnic segregation, caused the state to essentially disinvest from poor neighbourhoods. Today some of the heat-stress causing impacts of this include reduced greenery and parks, increased state infrastructure such as high speed roadways, and decreased access to temperature controlled spaces.\nAs extreme heat events globally increase with climate change, solutions to help protect disadvantaged communities from heat and resultant health risks need to be implemented. Tree planting and other coverage-creating measures can be used, as well as the opening of cooling centres to the community when necessary. In order to locate and study these heat danger zones, LST can be calculated from satellite data, as we were shown in this week’s practical. If a solid relationship can be calculated between landscape variables such as greenery and the heat levels of the city, the effects of potential solutions can be modelled in order to find the most efficient and equitable solutions to heat stress.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "week9.html#analysis",
+    "href": "week9.html#analysis",
+    "title": "9  Week 9: Temperature",
+    "section": "9.2 Analysis",
+    "text": "9.2 Analysis\nFor this term’s group project, we proposed a predictive model that could help Bogota best implement green spaces in order to reduce their urban heat island effect. I created a workflow for this model based on two studies done in Australia and Japan. Both studies examined the existing relationship between LST and urban green spaces within their study spaces in order to make predictions on how temperatures might change with urban greening.\nThe first paper, “Evaluating the potential for urban heat-island mitigation by greening parking lots” by Onishi et all (2022), examines the relationship between NDVI and LST’s in order to predict how the temperatures of parking lots would change if greening measures were implemented by adding grass or trees. They used multivariate linear regression with 4m resolution IKONOS imagery for land cover classification and ASTER satellite data for LST. Their regression analysis indicated high levels of statistical significance between land classification type and LST measurement, and the models then implemented to simulate the proposed greening of parking lots. Though this is a good basic model, from my research on LST prediction it seems unlikely that this would be extremely accurate, as LST depends on many more variables than land classification alone. I have to wonder whether spatial autocorrelation might have played a role in their multivariate linear regression and wonder how they split their data into training and testing sets.\n\n\n\nLST predictions from “Evaluating the potential for urban heat-island mitigation by greening parking lots” (2010)\n\n\nThe second paper, “Time series analysis of land surface temperature and drivers of urban heat island effect based on remotely sensed data to develop a prediction model” by Khalil et al (2021) performed a similar analysis, but took more factors into consideration and constructed a CNN to predict LST rather than multivariate linear regression, allowing them to capture more complex relationships within the data. Instead of looking at land cover classifications, they used an enhanced vegetation index (EVI) along with road density and elevation. Their CNN displayed an accuracy level of 87% when asked to predict temperatures over several months. However, I also have to wonder if this might be affected by spatial autocorrelation. They state that their data was split into 70:30 for training and validation, but not if they split it into points (could induce spatial autocorrelation) or larger areas (less of a risk). Though they did take many factors into account, there does seem to still be major discrepancies between their predicted LST and the actual LST.\n\n\n\nDifference between predicted and recorded LST from “Time series analysis of land surface temperature and drivers of urban heat island effect based on remotely sensed data to develop a prediction model” (2021)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "week9.html#reflections",
+    "href": "week9.html#reflections",
+    "title": "9  Week 9: Temperature",
+    "section": "9.3 Reflections",
+    "text": "9.3 Reflections\nAgain, temperature is complex! I suspect that any model would have to be trained specifically on the area that it will be used to make predictions on, as there are so many local variables that are difficult to account for. However, this also induces risks of spatial autocorrelation that brings accuracy rates into question. Reading papers about the use of ENVI-met modelling incorporating so many factors such as individual building height and meteorological data such as humidity and wind speed and direction makes it clear that it is not possible to fully predict heat from satellite imagery alone. However, the ability to capture LST from satellites has enabled the ability to measure the impacts of elements recorded through non-satellite means upon ground temperature. The new use of neural networks and deep learning is very exciting for the incorporation of more variables and complex data into analysis and prediction. I can see this becoming very important for future implementation of urban greening measures, which I think has the potential to help urban inhabitants in many ways - not just in terms of physical health but also socially, environmentally, and mentally.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "week9.html#references",
+    "href": "week9.html#references",
+    "title": "9  Week 9: Temperature",
+    "section": "9.4 References",
+    "text": "9.4 References\nWilson, B. (2020) “Urban Heat Management and the Legacy of Redlining”, Journal of the American Planning Association, 86:4, 443-457, DOI: 10.1080/01944363.2020.1759127\nKhalil, U., Aslam, B., Azam, U. and Khalid, H.M.D. (2021) “Time series analysis of land surface temperature and drivers of urban heat island effect based on remotely sensed data to develop a prediction model.” Applied Artificial Intelligence, 35(15), pp.1803-1828.\nOnishi, A., Cao, X., Ito, T., Shi, F. and Imura, H. (2010) “Evaluating the potential for urban heat-island mitigation by greening parking lots.” Urban forestry & Urban greening, 9(4), pp.323-332.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Week 9: Temperature</span>"
+    ]
+  },
+  {
+    "objectID": "week1.html",
+    "href": "week1.html",
+    "title": "2  Week 1: Introduction",
+    "section": "",
+    "text": "2.1 Summary\nRemotely sensed data is earth observation data collected from satellites. The practice can vary in several ways; the type of sensor used, the waves the sensor picks up on, and in the various resolutions the collected data can come in. Remotely sensed data is often more complex than other kinds of spatial data, usually (but not always) contained in a raster form, which can be challenging to use, clean, and interpret. Obtaining it often requires less reliance on authorities than other spatial data, and there are many free resources available for its procurement and processing.\nThough both passive and active sensors absorb electromagnetic radiation waves bounced from Earth, they differ in the origin point of these waves. The waves picked up by active sensors typically originate from the sun, though night-time use may look at human-emitted light as well. This works similarly to the human eye. Active sensors, on the other hand, emit wavelengths at Earth and record how they bounce back, closer to how a bat emits sonar to locate prey. Examples of this in remote sensing include SAR, synthetic aperture radar, as well as LiDAR and radar.\nEMR waves are not always cleanly transmitted from their source to Earth to the satellite. Energy can be scattered by atmospheric particles, particularly clouds, making remote sensing difficult. Where this happens, switching from the short wavelengths of the visible light spectrum to the longer ones implemented by active sensors such as SAR can help the waves to pass through scattering particles and deliver cleaner data.\nThere are four kinds of resolution involved in remote sensing; spatial, spectral, radiometric, and temporal. Spatial resolution indicates the amount of space that each pixel represents; spectral resolution the values for each wavelength across the visible and non visible spectrum that are represented in a feature, and temporal the time of revisit. I am not entirely sure what radiometric represents; the slides said “differences in energy” which sounds like something to do with EMR waves that I don’t quite understand.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 1: Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "week1.html#applications",
+    "href": "week1.html#applications",
+    "title": "2  Week 1: Introduction",
+    "section": "2.2 Applications",
+    "text": "2.2 Applications\nI found two interesting applications of SAR used in archaeology to compare for this week. I used to work in archaeology and the idea of having technology to identify sites from space is very cool to me - certainly beats standing around in rainy construction sites looking in holes, which was mostly my experience!\nIn the first paper, “SAR Imaging of Archaeological sites on Intertidal Flats in the German Wadden Sea” (2019), the authors used SAR to identify land uses of historic settlements flooded hundreds of years ago. Because the flood plain is difficult to access and excavate, remote sensing became a vital tool. 19 images with a high resolution of &lt;1m2 allowed for the detection of very fine structures.\n\n\n\nSAR images from “SAR Imaging of Archaeological sites on Intertidal Flats in the German Wadden Sea”\n\n\nThis was particularly effective because of the water left on the surface in the smooth areas between archaeological disturbance - it is smooth and thus black, making ridges left by ditches and old foundations stand out. Initially reading this paper it made a lot of sense to me why they would use SAR, as they are looking for textural disturbance; but this aerial image they provided of the site did make me wonder why they would not use passive sensors and the spectral band, as it looks like that provides plenty of data too.\n\n\n\nAerial images from “SAR Imaging of Archaeological sites on Intertidal Flats in the German Wadden Sea”\n\n\nWhere SAR really shines is in temporal comparative study, as it was used in the paper “‘Looting marks’ in space-borne SAR imagery: Measuring rates of archaeological looting in Apamea (Syria) with TerraSAR-X Staring Spotlight” (2016). In their research, the authors looked at a series of 5 SAR images of their site over the course of a year in order to find holes dug in the site by looters hoping to steal artefacts. Their textural analysis essentially subtracted each image layer from the previous one in order to identify changes that had occurred. Using SAR instead of colour band imagery in this case makes sense, as it can identify surface level alterations that could be missed due to inconsistent light conditions, or differing colour contrast between images.\n\n\n\nSAR images from “‘Looting marks’ in space-borne SAR imagery: Measuring rates of archaeological looting in Apamea (Syria) with TerraSAR-X Staring Spotlight”",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 1: Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "week1.html#reflections",
+    "href": "week1.html#reflections",
+    "title": "2  Week 1: Introduction",
+    "section": "2.3 Reflections",
+    "text": "2.3 Reflections\nWorking with SNAP this week was quite challenging as I found the program crashed on me very frequently, but it was still interesting to look at the different layers. It helped me understand the concept of colour bands given this week. I’m excited to try out different programs to visualise satellite imagery later in the course, particularly non-colourband data such as heat, or radar based data like SAR.\nI think learning about active sensors was more interesting to me this week than passive sensors. Most of my ideas of remote sensing were really just about colour band data on the visible spectrum, so the idea of seeing textures is very cool to me. The non-visible spectral signatures of passive sensors, like infrared, are also very interesting. Can ultraviolet light be captured with passive sensors? I read a great book recently called “An Immense World” by Ed Yong that discusses different animal sense organs that we do not possess and how it changes their experience of the world, and a major topic was ultraviolet light and how there are many cues from it that we cannot pick up on. For example, “targets” on flowers that show bees where to find nectar. A project utilising remotely sensed ultraviolet to identify or classify plant species areas could be cool!\nElectromagnetic waves are really interesting to me but I find the idea difficult to conceptualise. The comparison to ocean waves made it a little clearer to me, but what is an electromagnetic wave moving in the vacuum of spaces? Just energy? I wonder if it is possible to visualise the presence of electromagnetic wave sources on Earth with remote sensing if that is the case - sounds like it could be a cool project. Also - good to know about Planet giving educational licences for high resolution imagery - could come in useful for my dissertation later.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 1: Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "week1.html#references",
+    "href": "week1.html#references",
+    "title": "2  Week 1: Introduction",
+    "section": "2.4 References",
+    "text": "2.4 References\nGade, M., Kohlus, J. and Kost, C. (2017). “SAR imaging of archaeological sites on intertidal flats in the German Wadden Sea.” Geosciences, 7(4), p.105.\nTapete, D., Cigna, F. and Donoghue, D.N. (2016). “‘Looting marks’ in space-borne SAR imagery: Measuring rates of archaeological looting in Apamea (Syria) with TerraSAR-X Staring Spotlight.” Remote Sensing of Environment, 178, pp.42-58.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 1: Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "week2.html",
+    "href": "week2.html",
+    "title": "3  Week 2: Satellite Xaringen",
+    "section": "",
+    "text": "3.1 Reflections\nIt was very interesting to see the level of spatial and temporal detail that modern satellites are capable of achieving. Weather analysis is obviously very important for climate change studies in the future, but I do wonder what the other uses might be found for satellites like this in the future, particularly more nefarious ones. I’ve read about other low-orbit satellites - Albedo Space is a recent one - that claim to be capable of identifying individual people, and the images they have provided look pretty convincing. Scary stuff! It does make me wonder where the race for higher and higher resolution is going to end, and what the long term privacy implications are for us on the ground. This also made me curious about the accessibility of the data that these satellites are recording, particularly the ones funded by the government (and thus by the public). How easy is it to get this data for research or non-research purposes, particularly in this high quality?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 2: Satellite Xaringen</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html",
+    "href": "week3.html",
+    "title": "4  Week 3: Data Corrections",
+    "section": "",
+    "text": "4.1 Summary\nThis week we looked at possible data errors that can arise during the data collection process and how they can be corrected. These largely concern either geometric or atmospheric errors. We also examined methods of visual enhancement of certain data characteristics that allow us to learn more about specific aspects of the environment difficult to otherwise pick out from regular colorband representations.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3: Data Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html#summary",
+    "href": "week3.html#summary",
+    "title": "4  Week 3: Data Corrections",
+    "section": "",
+    "text": "4.1.1 Geometric error calibration\nGeometric errors often arise from miscalibration in where the camera is pointed, leading to data being off-kilter from their true locations. The view angle may be off nadir, or the satellite may be slightly off its orbit path. This issue can be fixed with by identifying control points within the incorrect data and a control image, identifying their spatial relationship and applying a linear regression to convert all of the data to the coordinates of the control data.\n\n\n4.1.2 Atmospheric error calibration\nAtmospheric errors arise from light scattering against atmospheric particles and entering the lens, appearing as haze. Or in more scientific terms, additive path radiance can cause at sensor radiance to differ from surface total radiance. This can be corrected through absolute or relative methods. Absolute methods use atmospheric data or satellite targets to measure the amount of atmospheric interference and automatically correct it. Relative methods approximate this adjustment without access to other forms of data, through use of methods such as dark object subtraction or pseudo-invariant features. These methods estimate what the data should look like based on a couple of reference points and transforms the data to fit those references.\n\n\n4.1.3 Merging\nIn today’s activity we examined how to merge multiple observation tiles to create a larger image, useful when studying a large area. Other forms of merging can combine different kinds of sensor outputs, such as the merging of active and passive sensors, to enhance data from a study area. Other forms of data enhancement are also possible without merging; NDVI indexes can be visually represented to show vegetation levels and health more clearly, and texture can also be represented to show the relationships between the values of different pixels more clearly.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3: Data Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html#applications",
+    "href": "week3.html#applications",
+    "title": "4  Week 3: Data Corrections",
+    "section": "4.2 Applications",
+    "text": "4.2 Applications\nTwo interesting applications of merging can be found in Rudner et al (2019) and Belenguer-Plomer et al (2021). Both of these studies merge optical band data from Sentinel-2 with radar data from Sentinel-1 to gain more information in the wake of natural disasters that can obscure typical remote sensing methods.\nIn Rudner et al, researchers aimed to remediate the issues of limited or slow satellite data in the wake of floods, when data is urgently needed for search and rescue operations in order to prioritise the areas worst affected. They combined data of not only multiple types (optical and radar) but also multiple temporalities (before and after the disaster) and multiple resolutions. These methods focus on speed of data availability to first responders. Radar data is used to immediately identify which areas have been flooded as water responds differently to radar than buildings do, and can be detected even in stormy weather that can prevent optical band sensing. Optical bands can come in handy later once water levels have fallen and “before” images can be compared to “after” images to ascertain areas of worst damage. \nIn Belenguer-Plomer et al, ten different environment types around the world were recorded with optical band data and radar data before and after fires, in order to develop a neural network capable of identifying burned areas and estimating the severity of the burn. The following data is fed into a convolutional neural network; the Normalised Difference Vegetation Index (NDVI), the Normalised Burn Ratio, the Normalised Difference Water Index, the Mid Infrared Burn Index, and the optical band data from before and after the fire. These indices are all obtained from data enhancement methods studied this week. The use of radar in this case also contributed data on structural change and moisture that could give clues to which areas had and had not been burned. After training on one set of sites, the neural network was tested on another set of sites with similar biomes, showing varying accuracy levels across different types of land cover. They recorded increased accuracy when adding radar data to the usual optical band information used.\n\n\n\nCNN accuracy rates at predicting if different land cover types have been burned with Sentinel 1 SAR, Sentinel 2 colour bands, and a combination of both from “CNN-based burned area mapping using radar and optical data”\n\n\nBoth of these studies engage in complex pre-processing and data integration methods, and both also rely on convolutional neural networks (CNN’s) for processing the integrated data and identifying areas of concern. Both succeed in certain areas while possibly falling short in others.\nRudner et al can deliver results quickly, as it uses data captured before, during, and after the floods with the intent of making the data readable and actionable at all phases. However, due to the narrow breadth of its training scenario, it could struggle under alternative conditions such as different flood patterns or another type of landscape. Belenguer-Plomer et al shows the necessity of adjusting algorithms to be prepared for different scenarios and environments, as the neural network was shown to have varying accuracy rates in differing biomes even when taking that variation into account during the training process. Belenguer-Plomer et al also reports its accuracy levels, which Rudner et al fails to do. However, Belenguer-Plomer et al also has certain shortcomings. Due to the extensive preprocessing required and the need for data captured before and after the event, it likely would not have the same rapid applicability as the Rudner et al study.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3: Data Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html#reflections",
+    "href": "week3.html#reflections",
+    "title": "4  Week 3: Data Corrections",
+    "section": "4.3 Reflections",
+    "text": "4.3 Reflections\nSome of the “radiance” vs “reflectance” etc jargon is difficult to remember. I found the use of linear regression for image correction to be very interesting as I use linear regression often in data science research contexts but have not thought much about its practical uses in geography. Even though the process sounds complicated and I don’t know if I want to get too far into it, particularly because corrected data is already easy to access, this has made me more interested in the transformative applications of regression equations. It’s interesting to hear about how different issues can arise and the correction methods implemented to solve them, and I understand why this is important for us to know, but I still find myself more interested in the enhancement aspects and particularly in the NDVI index. In my undergraduate degree I studied environmental anthropology and invasive ecosystems, so it is super cool to see remote sensing used in research on the topic.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3: Data Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week3.html#references",
+    "href": "week3.html#references",
+    "title": "4  Week 3: Data Corrections",
+    "section": "4.4 References",
+    "text": "4.4 References\nBelenguer-Plomer, M.A., Tanase, M.A., Chuvieco, E. and Bovolo, F., 2021. “CNN-based burned area mapping using radar and optical data”. Remote Sensing of Environment, 260, p.112468. https://www.sciencedirect.com/science/article/pii/S0034425721001863?via%3Dihub\n​​Rudner, T.G., Rußwurm, M., Fil, J., Pelich, R., Bischke, B., Kopačková, V. and Biliński, P., 2019, July. “Multi3net: segmenting flooded buildings via fusion of multiresolution, multisensor, and multitemporal satellite imagery”. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 33, No. 01, pp. 702-709). https://ojs.aaai.org/index.php/AAAI/article/view/3848",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 3: Data Corrections</span>"
+    ]
+  },
+  {
+    "objectID": "week4.html",
+    "href": "week4.html",
+    "title": "5  Week 4: Policy",
+    "section": "",
+    "text": "5.1 Summary:\nSouth Africa and in particular Cape Town has for several years suffered from a lack of electricity to appropriately support its population, due to the ageing infrastructure of the coal power plants which are the primary national power generators. In response to this, Cape Town has enacted regular rolling blackouts during peak power usage times to reduce pressure on the national grid. This process, called “load shedding”, has unequal effects on the population; while wealthier households can rely on private generators, others suffer from various effects of loss of power including food insecurity, employment instability, loss of internet access, and inability to travel. South Africa outlined several policies to increase grid capability in their South African Renewable Energy Masterplan, including the implementation of small-scale embedded generation (SSEG) by businesses and private citizens. These SSEGs are photovoltaic systems that primarily power the buildings that they are mounted on, but also feed excess energy back into the grid. These policies incentivise the installation of solar panels on homes and businesses by providing tax rebates, and paying households and businesses for the electricity they sell back to the grid, either in cash (for businesses only) or in electricity credit. This program has proven to be extremely popular, with a 3-6 month waiting list on applications to connect to the national grid - which must be vetted in-person to ensure the safety of the grid.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week4.html#summary",
+    "href": "week4.html#summary",
+    "title": "5  Week 4: Policy",
+    "section": "",
+    "text": "Load shedding map of Cape Town, South Africa. By L. Middleway",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week4.html#applications",
+    "href": "week4.html#applications",
+    "title": "5  Week 4: Policy",
+    "section": "5.2 Applications",
+    "text": "5.2 Applications\nBy initiating this program the government has made strong steps to relieve both inequality and discomfort caused by the rolling blackouts and reduce reliance on non-environmentally friendly power infrastructure. Through the use of remote sensing data, these initiatives can be sped up and applied more effectively throughout Cape Town. Remote sensing data can help identify and prioritise roofs best suited to produce the most power in being hooked up to the national grid, decreasing inequitable power cuts and reducing reliance on coal plants.\nSeveral previous studies calculating potential solar resources can be used as examples of this process. Polo et al (2015) used Meteosat data to calculate Global Horizontal Irradiance (GHI), measuring both direct solar radiation and diffuse radiation scattered by the atmosphere. It also utilised sunshine duration data recorded from the ground and meteorological data. This data was used to show the comparative potential performance of solar power plants in different areas of the country. The main restrictive factor was shown to be the slope of the land, and the most effective solar locations were found to be in the south of the country closer to the equator.\n\n\n\nSolar Potential of Vietnam map from “Solar resources and power potential mapping in Vietnam using satellite-derived and GIS-based information” (2015)\n\n\nAnother project, Lee et al (2019)’s “DeepRoof” used deep learning techniques in combination with satellite imagery to identify roofs and calculate the potential solar output of the roofs of existing buildings, rather than potential solar plant sites. The deep learning methods were capable of accurately detecting the angle of slanted roofs from the images alone, and accounting for them within solar potential calculations as well as for shade cast by nearby objects. DeepRoof and Polo et al (2015) both accounted for the effect of slope upon potential solar panel placement, but only DeepRoof accounted for the height of the solar panels by incorporating into their study real estate data about the height of the buildings.\n\n\n\nRooftop solar potential estimation from “Deeproof: A data-driven approach for solar potential estimation using rooftop imagery” (2019)\n\n\nBódis et al (2019) used similar solar irradiance analysis and meteorological measurement as Polo et al but different remote sensing roof detection methods from Lee et al. Instead of real estate data, which could be inaccurate or not easily available, they used satellite imagery data to measure rooftops and calculate potential power output for grid-connected solar rooftops across the EU. Financial data on the price of electricity and the local cost of funding solar panel projects was also calculated in order to identify regions that had comparatively high photovoltaic potential, high electricity cost, and low solar installation cost, and thus could benefit most from increased solar installation.\n\n\n\nUrban roof segmentation methods from “A high-resolution geospatial assessment of the rooftop solar photovoltaic potential in the European Union” (2019)\n\n\nLiDAR data is expensive and can be difficult to obtain. Having access to other methods of rooftop estimation such as were used in DeepRoof can be useful, but for a project that is analysing a large area rather than an individual roof, LiDAR rooftop analysis is certainly more efficient and likely more accurate.\nThe methods outlined above by previous studies can be utilised in different ways to identify and prioritise roofs with high photovoltaic potential to connect to the national grid. Satellite imagery and Meteosat data can be used to find rooftops, estimate their size, and calculate the level of direct and diffused solar radiation that they receive. Methods like those used in DeepRoof can further calibrate these estimates by incorporating the altitude and angle of the roof, and identifying potential nearby obstructions to sunlight. Once the 3-6 month waiting list has been dealt with, these methods could help the city government to identify buildings that are good candidates for solar panels and provide suitable incentives for their installation and connection. Using economic data as was done in Bódis et al’s study could find relatively economically privileged homes and businesses in regions of Cape Town more capable of affording the initial cost of solar installation in exchange for long term rewards. These buildings likely use significantly more electricity than smaller ones, increasing the impetus to decrease their reliance on the national grid. By focusing on motivating wealthier areas to install panels, some of the financial costs of installation would be removed from the government, which is currently in a significant amount of debt. Providing these relative benefits to wealthier areas would also help to remove the extra burdens faced by the socioeconomically disadvantaged as the cost of electricity and the frequency of blackouts would fall in response to increased power supply and decreased demand.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week4.html#reflection",
+    "href": "week4.html#reflection",
+    "title": "5  Week 4: Policy",
+    "section": "5.3 Reflection",
+    "text": "5.3 Reflection\nMany more factors were involved in the calculation of rooftop solar potential than I would have thought. Multiple forms of remote sensing were used in different projects, combining satellite data with LiDAR plane data, which I have not really seen used before and which I found super interesting. It reminds me of some of the 3D view options on Google Maps and Apple maps, making me wonder if those are based on LiDAR data or if they have other methods of estimating building height. The inclusion of machine vision / recognition methods also interested me as it is something I will soon be covering in other classes; I’m hoping to do a project on archaeological site recognition in drought stricken areas like this one, which would also combine meteorological data with satellite imagery and machine vision.\nAs for the policy issues, they are difficult to fully sort out as the real world is tricky. Given that many homes in wealthier neighbourhoods in Cape Town already have generators, I would prefer that independent solar panel power access be distributed in disadvantaged neighbourhoods; however, South African townships do not have suitable architecture for solar panels in either size or stability. There is not a perfect solution for this issue, but there are many actions that can be taken to mitigate contributions to climate change and its effects on local communities.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week4.html#references",
+    "href": "week4.html#references",
+    "title": "5  Week 4: Policy",
+    "section": "5.4 References",
+    "text": "5.4 References\nBódis, K., Kougias, I., Jäger-Waldau, A., Taylor, N. and Szabó, S. (2019). “A high-resolution geospatial assessment of the rooftop solar photovoltaic potential in the European Union.” Renewable and Sustainable Energy Reviews, 114, p.109309.\nLee, S., Iyengar, S., Feng, M., Shenoy, P. and Maji, S., 2019, July. “Deeproof: A data-driven approach for solar potential estimation using rooftop imagery”. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (pp. 2105-2113).\nMiddleway, L. (2012) “Load Shedding All Areas Schedule and Map”, Studocu. Available at: https://www.studocu.com/en-za/document/university-of-south-africa/business-management-ib/load-shedding-all-areas-schedule-and-map/17571011 (Accessed: 15 March 2024).\nMineral Resources & Energy Science and Innovation Trade, Industry and Competition (2023) “South African Renewable Energy Masterplan (SAREM)”. Available at https://www.dmr.gov.za/Portals/0/Resources/Renewable%20Energy%20Masterplan%20(SAREM)/South%20African%20Renewable%20Energy%20Masterplan%20(SAREM)%20Draft%20III.pdf (Accessed: 15 March 2024)\nPolo, J., Bernardos, A., Navarro, A.A., Fernandez-Peruchena, C.M., Ramírez, L., Guisado, M.V. and Martínez, S. (2015). “Solar resources and power potential mapping in Vietnam using satellite-derived and GIS-based information”. Energy Conversion and Management, 98, pp.348-358.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Week 4: Policy</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html",
+    "href": "week6.html",
+    "title": "6  Week 6: Google Earth Engine",
+    "section": "",
+    "text": "6.1 Summary:\nGoogle Earth Engine is an alternative code-based interface for the simultaneous viewing and manipulation of satellite imagery. Released in 2010, it has become widely used for its capabilities, accessibility, and speed.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 6: Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#analysis",
+    "href": "week6.html#analysis",
+    "title": "6  Week 6: Google Earth Engine",
+    "section": "6.2 Analysis:",
+    "text": "6.2 Analysis:\nTo try GEE’s capabilities out I decided to create a Land Surface Temperature map of different locations. This process required me to outline a location and time period and extract suitable images. I then sorted them from least to most cloudy in order to find the images with least cloud cover for temperature analysis, as the process does not work with cloud cover. I then mapped the LST with a selected colour range and also mapped optical colour bands in order to see where the high temperatures overlapped with cities.\n\n\n\nLST of San Jose and the South Bay, CA Bay Area\n\n\nI found that in the area I was analysing it was not just cities that reached high temperatures; the dry, rocky hills and mountains not covered by trees are similarly hot. This made it harder to distinguish between urban and rural areas from the LST, but the difference was still distinguishable when comparing the urban areas to only other areas of similar elevation. Adding an NDVI analysis could also help to find the causes of warmer and cooler temperatures. Other interesting observed effects were the warmer water temperatures within the bay and the effects of agricultural watering further east.\n\n\n\nColourband data of same area\n\n\nGoogle Earth Engine is a popular choice for those working on issues of LST. I found two papers investigating the connection between urbanisation and increasing temperatures. Each focused on a different region in Southeast Asia and mapped the spread of built-up areas over several years. Satellite imagery seems particularly useful in analysis of regions outside of the global North, as it can be used in regions where on-the-ground sensors may not be as economically efficient.\nThe first study by Maishella et al examines the relationships between increasing urbanisation, building density, and LST in the Sleman Regency of Indonesia between 2014 and 2019. Using Landsat 8 satellite imagery through Google Earth Engine, they classified land into four categories using supervised maximum likelihood classification. They calculated LST themselves from the Top of Atmosphere spectral radiance, using band-specific rescaling factors from the metadata on quantized and calibrated pixel values. They found a strong correlation between increased building density and increased LST, demonstrating the urban heat island effect I noticed in my rudimentary LST extraction.\n\n\n\nLinear regression relationship between LST and Building Density from “Correlation analysis of urban development and land surface temperature using google earth engine in Sleman Regency, Indonesia.”\n\n\nThe second study by Murtaza et al similarly examined the relationship between land cover type and LST in Srinagar City India between 1992 and 2020. They differed from the previous study in several notable areas; they had 12 land cover categories rather than 4, used Gaussian Maximum Likelihood for classification and used Google Earth Engine’s LST resources rather than calculating LST themselves from the imagery. Doing this saved them huge amount of computing time and power, another benefit of Google Earth Engine. Like Maishella et al, they found significant relationships between urban density and high LST, but they also found similarly significant relationships between land categorised as “bare rock” and high LST. This lines up with what I saw in my GEE analysis, where area that I know to be mostly bare rock had similar temperatures to built-up urban areas.\n\n\n\nUrbanisation and LST change over 30 years in Srinagar City, from “Understanding the linkages between spatio-temporal urban land system changes and land surface temperature in Srinagar City, India, using image archives from Google Earth Engine.”",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 6: Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#reflections",
+    "href": "week6.html#reflections",
+    "title": "6  Week 6: Google Earth Engine",
+    "section": "6.3 Reflections:",
+    "text": "6.3 Reflections:\nI far preferred working in Google Earth Engine to the previous interfaces used in this class. Though some of the code was more difficult to figure out when working by myself, online resources answered most of my questions. I have a later project where I hope to use machine learning on satellite imagery; I’m wondering if it would be possible to do this directly in the GEE interface or if I must export from here into Python. Having a tool like this that can save my computer a lot of trouble in computing is very useful. This was probably the most fiddling around I have done so far with remotely sensed data - I was interested in doing something for LST as that’s the project my group has picked, but didn’t realise there is a practical later that would give us instructions! So the code is mostly what I found online after a bit of figuring out. I think I’ll probably use this or a similar pipeline to get some imagery for our presentation. I must say I am shocked at how far back the LST data from Srinigar City goes! What a valuable resource for measuring global warming and climate change.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 6: Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week6.html#references",
+    "href": "week6.html#references",
+    "title": "6  Week 6: Google Earth Engine",
+    "section": "6.4 References",
+    "text": "6.4 References\nMaishella, A., Dewantoro, B.E.B. and Aji, M.A.P., 2020, July. “Correlation analysis of urban development and land surface temperature using google earth engine in Sleman Regency, Indonesia.” In IOP Conference Series: Earth and Environmental Science (Vol. 540, No. 1, p. 012018). IOP Publishing.\nMurtaza, K.O., Shafai, S., Shahid, P. and Romshoo, S.A., 2023. “Understanding the linkages between spatio-temporal urban land system changes and land surface temperature in Srinagar City, India, using image archives from Google Earth Engine.” Environmental Science and Pollution Research, 30(49), pp.107281-107295.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Week 6: Google Earth Engine</span>"
+    ]
+  },
+  {
+    "objectID": "week7.html",
+    "href": "week7.html",
+    "title": "7  Week 7: Classification I",
+    "section": "",
+    "text": "7.1 Summary:\nThree major methods of image classification are defined for us; unsupervised, supervised, and object-based. The unsupervised method is pixel-based, where pixels are grouped into clusters based on their common properties and then manually classified with land cover type. Clustering can be done with k-means or ISODATA. I used k-means clustering in a rather different context last term so I find it interesting to see it be used on imagery here! The supervised method is also pixel-based, but instead of labelling clusters after they are formed, representative samples of each land cover type are used as training data and then applied to the whole image (excluding, I hope, the training sites in order to not influence the accuracy data). Different algorithms are used in classification, with Maximum Likelihood and Support Vector Machine being the ones I think I have seen the most before. Finally, object-based classification groups similar pixels into representative shapes (or objects) based on texture, colour, shape, or even proximity to other objects. This method also requires training. GISGeography states that this method is the most successful of all three, but only when image resolution is high enough.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 7: Classification I</span>"
+    ]
+  },
+  {
+    "objectID": "week7.html#analysis",
+    "href": "week7.html#analysis",
+    "title": "7  Week 7: Classification I",
+    "section": "7.2 Analysis",
+    "text": "7.2 Analysis\nI found an article that combined different methods of image classification to track the spread of an invasive species. In “Mapping estuarine vegetation using satellite imagery: The case of the invasive species Baccharis halimifolia at a Natura 2000 site.” by Calleja et al, supervised image classification as well as object-based methods were used to identify the invasive shrub species Baccharis halimifolia in Spanish estuaries. Seven types of land cover were identified, including B. halimifolia, and Support Vector Machine algorithms trained on 10% of the available data and then tested on the rest.\nThen, object-based classification methods were used to separate the estuary into alike- and non-alike segments using the Meanshift Segmentation Algorithm.\nFinally, the two methods were combined. Object-based classification was used to define the broad areas where B. halimifolia might exist, and then pixel-based classification used within those likely segments to pick out where it detected its presence. The researchers state their reasoning for combining these methods as to try to improve accuracy; by reducing the number of pixels to classify and the range of their values, the algorithm might be more capable of separating “spectrally similar” pixels into the correct categories.\nComparing the accuracy of the three classification methods shows the pixel-based to be most accurate overall, followed by the mixed method and then the object-based method. However, when looking specifically at identification of B. halimifolia instead of identification of all land-cover types, the mixed method was the most accurate.\n\n\n\nComparing data types and classification techniques at identifying B. halimifolia, from “Mapping estuarine vegetation using satellite imagery: The case of the invasive species Baccharis halimifolia at a Natura 2000 site” (2019)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 7: Classification I</span>"
+    ]
+  },
+  {
+    "objectID": "week7.html#reflections",
+    "href": "week7.html#reflections",
+    "title": "7  Week 7: Classification I",
+    "section": "7.3 Reflections",
+    "text": "7.3 Reflections\nI’m curious as to how this ties in with deep learning image classification techniques, such as convolutional neural networks or recurrent neural networks. Would they be categorised as supervised and just used in the final algorithm stage similarly to how SVMs are currently implemented? I’m also interested by the methods used in the article I found to combine object-based and pixel-based classification. Though they were less accurate overall, they did succeed in their specific use-case of identifying the invasive shrub - which makes sense to me considering the specificity of their training. Perhaps similar methods can do better in targeted studies, rather than overall land cover classification tasks.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 7: Classification I</span>"
+    ]
+  },
+  {
+    "objectID": "week7.html#references",
+    "href": "week7.html#references",
+    "title": "7  Week 7: Classification I",
+    "section": "7.4 References",
+    "text": "7.4 References\nCalleja, F., Ondiviela, B., Galván, C., Recio, M. and Juanes, J.A., 2019. “Mapping estuarine vegetation using satellite imagery: The case of the invasive species Baccharis halimifolia at a Natura 2000 site.” Continental Shelf Research, 174, pp.35-47.\nGISGeography (2023) Image Classification Techniques in Remote Sensing, GIS Geography. Available at: https://gisgeography.com/image-classification-techniques-remote-sensing/ (Accessed: 5 March 2024).",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Week 7: Classification I</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html",
+    "href": "week8.html",
+    "title": "8  Week 8: Classification II",
+    "section": "",
+    "text": "8.1 Summary\nThis week we learned about the potential pitfalls of imagery classification, particularly their accuracy assessments. For example, the kappa coefficient has been used for a long time to measure classification accuracy by comparing the output of a classification model to “known” truth using a confusion matrix. However, several issues with its accuracy have recently been addressed, particularly related to its score being easily affected by variations in class prevalence; cases with evenly distributed classes score higher than those with unbalanced proportions. Accuracy assessments can also be strongly affected by issues earlier in the classification process. If the data used to train models is too similar to the data the models are then tested on, the models display high accuracy rates on that data, but low on any other area. These models are typically described as “overfitted”. If models are trained on random points from a region, these random points may be right next to the testing random points, in which case spatial autocorrelation means they will likely be very similar and not give the model an appropriate variety of data to learn from.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 8: Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html#analysis",
+    "href": "week8.html#analysis",
+    "title": "8  Week 8: Classification II",
+    "section": "8.2 Analysis",
+    "text": "8.2 Analysis\nI found an interesting paper, “Modification of the random forest algorithm to avoid statistical dependence problems when classifying remote sensing imagery” (2017) about sampling design that attempts to address issues of spatial dependence and autocorrelation between testing and training datasets used in classification tasks, specifically when using Random Forest algorithms.\nCánovas-García et al identify that the traditional out-of-bag (OOB) cross-validation method, which is integral to Random Forest, does not account for the spatial dependence among pixels or objects within the same training patch. To account for this, they shifted from individual pixel/object bootstrapping (random sampling with replacement) to bootstrapping entire training patches. This means that during the creation of each decision tree within the Random Forest, a training patch is either entirely included (all its pixels/objects) in the creation of the tree (in-bag) or entirely left out for validation purposes (out-of-bag). In class this method of sectioning off training and testing sets was mentioned, so it is interesting to see it implemented. However, the study falters in its excessive reliance on the kappa coefficient to determine feature selection; they iteratively trained the random forest with different subsets of features to maximise their kappa statistic. Though they believed that this would find the most important features in classification, with what we learned about kappa’s issues with class abundance, this process may have just been filtering out distinguishing features that would imbalance the proportions of class distribution.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 8: Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html#reflections",
+    "href": "week8.html#reflections",
+    "title": "8  Week 8: Classification II",
+    "section": "8.3 Reflections",
+    "text": "8.3 Reflections\nUnsurprisingly, it was difficult to find papers that went into the potential errors of their classification models, whether if based on spatial dependence or on kappa coefficients. It makes sense that researchers are not very interested in advertising their potential failures, but it does make it challenging to learn anything from them! The spatial dependence I’ve learned about before I think has mostly been about how models trained on one region, say a city, may struggle to reach the same high classification accuracy when tested on another city. This version of spatial dependence made sense to me, but it is interesting to think about how this disparity between success scores may also be due to spatial autocorrelation within the model’s training and testing data sets leading to over-inflated success scores. The recommended method of dividing areas into testing and training regions, rather than testing and training points makes sense for me in avoiding this phenomenon. This is great to know and keep in mind when I work on my assessments this term as several of them involve classification tasks.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 8: Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "week8.html#references",
+    "href": "week8.html#references",
+    "title": "8  Week 8: Classification II",
+    "section": "8.4 References",
+    "text": "8.4 References\nCánovas-García, F., Alonso-Sarría, F., Gomariz-Castillo, F. and Oñate-Valdivieso, F. (2017). “Modification of the random forest algorithm to avoid statistical dependence problems when classifying remote sensing imagery”. Computers & Geosciences, 103, pp.1-11.\nFoody, G.M. (2020). “Explaining the unsuitability of the kappa coefficient in the assessment and comparison of the accuracy of thematic maps obtained by image classification”. Remote Sensing of Environment, 239, p.111630.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 8: Classification II</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Learning Diary",
+    "section": "",
+    "text": "My name is Ciara and I am a masters student in the Social and Geographic Data Science program at UCL. I’m excited to be studying remote sensing this term and experimenting with different kinds of data. In my program we mostly focus on more tabular data, so raster data should be fun! I have academic and professional background in anthropology and archaeology and am interested in how remote sensing can be leveraged in studies of peoples’ effect on landscape, both the effects left from the past and those developing in the present. I plan on doing my dissertation research on how to understand and classify urban morphology using deep learning and hope to incorporate some remote imagery classification into my pipeline, so I’m sure this class will be helpful in my process of learning how to do this in the most accurate way possible. I also have background in photography and videography. Some of the tools I’ve seen before for working with remote sensing data look quite similar to photography tools for image editing, particularly histograms, so I am interested to see if there is any significant overlap between the two.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.html</span>"
+    ]
+  }
+]

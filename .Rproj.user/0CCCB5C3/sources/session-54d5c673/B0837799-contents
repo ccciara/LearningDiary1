@@ -1,0 +1,23 @@
+---
+title: "Week 8: Classification II"
+---
+
+## Summary
+
+This week we learned about the potential pitfalls of imagery classification, particularly their accuracy assessments. For example, the kappa coefficient has been used for a long time to measure classification accuracy by comparing the output of a classification model to "known" truth using a confusion matrix. However, several issues with its accuracy have recently been addressed, particularly related to its score being easily affected by variations in class prevalence; cases with evenly distributed classes score higher than those with unbalanced proportions. Accuracy assessments can also be strongly affected by issues earlier in the classification process. If the data used to train models is too similar to the data the models are then tested on, the models display high accuracy rates on that data, but low on any other area. These models are typically described as "overfitted". If models are trained on random points from a region, these random points may be right next to the testing random points, in which case spatial autocorrelation means they will likely be very similar and not give the model an appropriate variety of data to learn from.
+
+## Analysis
+
+I found an interesting paper, "Modification of the random forest algorithm to avoid statistical dependence problems when classifying remote sensing imagery" (2017) about sampling design that attempts to address issues of spatial dependence and autocorrelation between testing and training datasets used in classification tasks, specifically when using Random Forest algorithms.
+
+Cánovas-García et al identify that the traditional out-of-bag (OOB) cross-validation method, which is integral to Random Forest, does not account for the spatial dependence among pixels or objects within the same training patch. To account for this, they shifted from individual pixel/object bootstrapping (random sampling with replacement) to bootstrapping entire training patches. This means that during the creation of each decision tree within the Random Forest, a training patch is either entirely included (all its pixels/objects) in the creation of the tree (in-bag) or entirely left out for validation purposes (out-of-bag). In class this method of sectioning off training and testing sets was mentioned, so it is interesting to see it implemented. However, the study falters in its excessive reliance on the kappa coefficient to determine feature selection; they iteratively trained the random forest with different subsets of features to maximise their kappa statistic. Though they believed that this would find the most important features in classification, with what we learned about kappa's issues with class abundance, this process may have just been filtering out distinguishing features that would imbalance the proportions of class distribution.
+
+## Reflections
+
+Unsurprisingly, it was difficult to find papers that went into the potential errors of their classification models, whether if based on spatial dependence or on kappa coefficients. It makes sense that researchers are not very interested in advertising their potential failures, but it does make it challenging to learn anything from them! The spatial dependence I've learned about before I think has mostly been about how models trained on one region, say a city, may struggle to reach the same high classification accuracy when tested on another city. This version of spatial dependence made sense to me, but it is interesting to think about how this disparity between success scores may also be due to spatial autocorrelation within the model's training and testing data sets leading to over-inflated success scores. The recommended method of dividing areas into testing and training regions, rather than testing and training points makes sense for me in avoiding this phenomenon. This is great to know and keep in mind when I work on my assessments this term as several of them involve classification tasks.
+
+## References
+
+Cánovas-García, F., Alonso-Sarría, F., Gomariz-Castillo, F. and Oñate-Valdivieso, F. (2017). "Modification of the random forest algorithm to avoid statistical dependence problems when classifying remote sensing imagery". Computers & Geosciences, 103, pp.1-11.
+
+Foody, G.M. (2020). "Explaining the unsuitability of the kappa coefficient in the assessment and comparison of the accuracy of thematic maps obtained by image classification". Remote Sensing of Environment, 239, p.111630.

@@ -1,0 +1,37 @@
+---
+title: "Week 6: Google Earth Engine"
+---
+
+## Summary:
+
+Google Earth Engine is an alternative code-based interface for the simultaneous viewing and manipulation of satellite imagery. Released in 2010, it has become widely used for its capabilities, accessibility, and speed.
+
+## Analysis:
+
+To try GEE's capabilities out I decided to create a Land Surface Temperature map of different locations. This process required me to outline a location and time period and extract suitable images. I then sorted them from least to most cloudy in order to find the images with least cloud cover for temperature analysis, as the process does not work with cloud cover. I then mapped the LST with a selected colour range and also mapped optical colour bands in order to see where the high temperatures overlapped with cities.
+
+![LST of San Jose and the South Bay, CA Bay Area](images/6.1.png)
+
+I found that in the area I was analysing it was not just cities that reached high temperatures; the dry, rocky hills and mountains not covered by trees are similarly hot. This made it harder to distinguish between urban and rural areas from the LST, but the difference was still distinguishable when comparing the urban areas to only other areas of similar elevation. Adding an NDVI analysis could also help to find the causes of warmer and cooler temperatures. Other interesting observed effects were the warmer water temperatures within the bay and the effects of agricultural watering further east.
+
+![Colourband data of same area](images/6.2.png)
+
+Google Earth Engine is a popular choice for those working on issues of LST. I found two papers investigating the connection between urbanisation and increasing temperatures. Each focused on a different region in Southeast Asia and mapped the spread of built-up areas over several years. Satellite imagery seems particularly useful in analysis of regions outside of the global North, as it can be used in regions where on-the-ground sensors may not be as economically efficient.
+
+The first study by Maishella et al examines the relationships between increasing urbanisation, building density, and LST in the Sleman Regency of Indonesia between 2014 and 2019. Using Landsat 8 satellite imagery through Google Earth Engine, they classified land into four categories using supervised maximum likelihood classification. They calculated LST themselves from the Top of Atmosphere spectral radiance, using band-specific rescaling factors from the metadata on quantized and calibrated pixel values. They found a strong correlation between increased building density and increased LST, demonstrating the urban heat island effect I noticed in my rudimentary LST extraction.
+
+![Linear regression relationship between LST and Building Density from "Correlation analysis of urban development and land surface temperature using google earth engine in Sleman Regency, Indonesia."](images/6.3.png)
+
+The second study by Murtaza et al similarly examined the relationship between land cover type and LST in Srinagar City India between 1992 and 2020. They differed from the previous study in several notable areas; they had 12 land cover categories rather than 4, used Gaussian Maximum Likelihood for classification and used Google Earth Engine's LST resources rather than calculating LST themselves from the imagery. Doing this saved them huge amount of computing time and power, another benefit of Google Earth Engine. Like Maishella et al, they found significant relationships between urban density and high LST, but they also found similarly significant relationships between land categorised as "bare rock" and high LST. This lines up with what I saw in my GEE analysis, where area that I know to be mostly bare rock had similar temperatures to built-up urban areas.
+
+![Urbanisation and LST change over 30 years in Srinagar City, from "Understanding the linkages between spatio-temporal urban land system changes and land surface temperature in Srinagar City, India, using image archives from Google Earth Engine."](images/6.4.png)
+
+## Reflections:
+
+I far preferred working in Google Earth Engine to the previous interfaces used in this class. Though some of the code was more difficult to figure out when working by myself, online resources answered most of my questions. I have a later project where I hope to use machine learning on satellite imagery; I'm wondering if it would be possible to do this directly in the GEE interface or if I must export from here into Python. Having a tool like this that can save my computer a lot of trouble in computing is very useful. This was probably the most fiddling around I have done so far with remotely sensed data - I was interested in doing something for LST as that's the project my group has picked, but didn't realise there is a practical later that would give us instructions! So the code is mostly what I found online after a bit of figuring out. I think I'll probably use this or a similar pipeline to get some imagery for our presentation. I must say I am shocked at how far back the LST data from Srinigar City goes! What a valuable resource for measuring global warming and climate change.
+
+## References
+
+Maishella, A., Dewantoro, B.E.B. and Aji, M.A.P., 2020, July. "Correlation analysis of urban development and land surface temperature using google earth engine in Sleman Regency, Indonesia." In IOP Conference Series: Earth and Environmental Science (Vol. 540, No. 1, p. 012018). IOP Publishing.
+
+Murtaza, K.O., Shafai, S., Shahid, P. and Romshoo, S.A., 2023. "Understanding the linkages between spatio-temporal urban land system changes and land surface temperature in Srinagar City, India, using image archives from Google Earth Engine." Environmental Science and Pollution Research, 30(49), pp.107281-107295.

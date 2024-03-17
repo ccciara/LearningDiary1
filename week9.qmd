@@ -1,0 +1,33 @@
+---
+title: "Week 9: Temperature"
+---
+
+## Summary
+
+This week we focused on the urban heat island effect, reading studies about environmental disparities in urban areas and between different economic classes and how it has resulted in impacts to health. The historical practise of redlining, racial discrimination in housing resulting in ethnic segregation, caused the state to essentially disinvest from poor neighbourhoods. Today some of the heat-stress causing impacts of this include reduced greenery and parks, increased state infrastructure such as high speed roadways, and decreased access to temperature controlled spaces.
+
+As extreme heat events globally increase with climate change, solutions to help protect disadvantaged communities from heat and resultant health risks need to be implemented. Tree planting and other coverage-creating measures can be used, as well as the opening of cooling centres to the community when necessary. In order to locate and study these heat danger zones, LST can be calculated from satellite data, as we were shown in this week's practical. If a solid relationship can be calculated between landscape variables such as greenery and the heat levels of the city, the effects of potential solutions can be modelled in order to find the most efficient and equitable solutions to heat stress.
+
+## Analysis
+
+For this term's group project, we proposed a predictive model that could help Bogota best implement green spaces in order to reduce their urban heat island effect. I created a workflow for this model based on two studies done in Australia and Japan. Both studies examined the existing relationship between LST and urban green spaces within their study spaces in order to make predictions on how temperatures might change with urban greening.
+
+The first paper, "Evaluating the potential for urban heat-island mitigation by greening parking lots" by Onishi et all (2022), examines the relationship between NDVI and LST's in order to predict how the temperatures of parking lots would change if greening measures were implemented by adding grass or trees. They used multivariate linear regression with 4m resolution IKONOS imagery for land cover classification and ASTER satellite data for LST. Their regression analysis indicated high levels of statistical significance between land classification type and LST measurement, and the models then implemented to simulate the proposed greening of parking lots. Though this is a good basic model, from my research on LST prediction it seems unlikely that this would be extremely accurate, as LST depends on many more variables than land classification alone. I have to wonder whether spatial autocorrelation might have played a role in their multivariate linear regression and wonder how they split their data into training and testing sets.
+
+![LST predictions from "Evaluating the potential for urban heat-island mitigation by greening parking lots" (2010)](images/9.1.jpg)
+
+The second paper, "Time series analysis of land surface temperature and drivers of urban heat island effect based on remotely sensed data to develop a prediction model" by Khalil et al (2021) performed a similar analysis, but took more factors into consideration and constructed a CNN to predict LST rather than multivariate linear regression, allowing them to capture more complex relationships within the data. Instead of looking at land cover classifications, they used an enhanced vegetation index (EVI) along with road density and elevation. Their CNN displayed an accuracy level of 87% when asked to predict temperatures over several months. However, I also have to wonder if this might be affected by spatial autocorrelation. They state that their data was split into 70:30 for training and validation, but not if they split it into points (could induce spatial autocorrelation) or larger areas (less of a risk). Though they did take many factors into account, there does seem to still be major discrepancies between their predicted LST and the actual LST.
+
+![Difference between predicted and recorded LST from "Time series analysis of land surface temperature and drivers of urban heat island effect based on remotely sensed data to develop a prediction model" (2021)](images/9.2.jpeg)
+
+## Reflections
+
+Again, temperature is complex! I suspect that any model would have to be trained specifically on the area that it will be used to make predictions on, as there are so many local variables that are difficult to account for. However, this also induces risks of spatial autocorrelation that brings accuracy rates into question. Reading papers about the use of ENVI-met modelling incorporating so many factors such as individual building height and meteorological data such as humidity and wind speed and direction makes it clear that it is not possible to fully predict heat from satellite imagery alone. However, the ability to capture LST from satellites has enabled the ability to measure the impacts of elements recorded through non-satellite means upon ground temperature. The new use of neural networks and deep learning is very exciting for the incorporation of more variables and complex data into analysis and prediction. I can see this becoming very important for future implementation of urban greening measures, which I think has the potential to help urban inhabitants in many ways - not just in terms of physical health but also socially, environmentally, and mentally.
+
+## References
+
+Wilson, B. (2020) "Urban Heat Management and the Legacy of Redlining", Journal of the American Planning Association, 86:4, 443-457, DOI: 10.1080/01944363.2020.1759127
+
+Khalil, U., Aslam, B., Azam, U. and Khalid, H.M.D. (2021) "Time series analysis of land surface temperature and drivers of urban heat island effect based on remotely sensed data to develop a prediction model." Applied Artificial Intelligence, 35(15), pp.1803-1828.
+
+Onishi, A., Cao, X., Ito, T., Shi, F. and Imura, H. (2010) "Evaluating the potential for urban heat-island mitigation by greening parking lots." Urban forestry & Urban greening, 9(4), pp.323-332.
