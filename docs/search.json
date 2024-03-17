@@ -316,7 +316,7 @@
     "section": "",
     "text": "My name is Ciara and I am a masters student in the Social and Geographic Data Science program at UCL. I’m excited to be studying remote sensing this term and experimenting with different kinds of data. In my program we mostly focus on more tabular data, so raster data should be fun! I have academic and professional background in anthropology and archaeology and am interested in how remote sensing can be leveraged in studies of peoples’ effect on landscape, both the effects left from the past and those developing in the present. I plan on doing my dissertation research on how to understand and classify urban morphology using deep learning and hope to incorporate some remote imagery classification into my pipeline, so I’m sure this class will be helpful in my process of learning how to do this in the most accurate way possible. I also have background in photography and videography. Some of the tools I’ve seen before for working with remote sensing data look quite similar to photography tools for image editing, particularly histograms, so I am interested to see if there is any significant overlap between the two.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.html</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About Me</span>"
     ]
   }
 ]
